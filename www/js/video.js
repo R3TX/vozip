@@ -2,8 +2,8 @@
     navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
 
     // PeerJS object
-   // var peer = new Peer({ key: 'utstltczdtl6jemi'});
-var peer = new Peer( {
+    var peer = new Peer({ key: 'utstltczdtl6jemi'});
+/*var peer = new Peer( {
   key: 'utstltczdtl6jemi',
   debug: 3,
   config: {'iceServers': [
@@ -11,7 +11,7 @@ var peer = new Peer( {
     { url: 'turn:numb.viagenie.ca',
       credential: 'muazkh', username: 'webrtc@live.com' }
   ]}
-});
+});*/
 
     peer.on('open', function(){
       $('#my-id').text(peer.id);
