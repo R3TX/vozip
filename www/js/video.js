@@ -2,14 +2,16 @@
     navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
 
     // PeerJS object
-//var peer = new Peer();
-    var peer = new Peer({ key: 'utstltczdtl6jemi'});
-	/*var peer = new Peer({
+   // var peer = new Peer({ key: 'utstltczdtl6jemi'});
+var peer = new Peer( {
+  key: 'utstltczdtl6jemi',
+  debug: 3,
   config: {'iceServers': [
-    { url: 'stun:stun.l.google.com:19302' },
-    { url: 'turn:homeo@turn.bistri.com:80', credential: 'homeo' }
-  ]} /* Sample servers, please use appropriate ones */
-//});
+    { url: 'stun:stun1.l.google.com:19302' },
+    { url: 'turn:numb.viagenie.ca',
+      credential: 'muazkh', username: 'webrtc@live.com' }
+  ]}
+});
 
     peer.on('open', function(){
       $('#my-id').text(peer.id);
@@ -17,7 +19,7 @@
 
     // Receiving a call
     peer.on('call', function(call){
-      // Answer the call automatically (instead of prompting user) for demo purposes
+      // Contesta automaticamente 
       call.answer(window.localStream);
       step3(call);
     });
