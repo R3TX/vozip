@@ -1,6 +1,6 @@
  // Compatibility shim
     navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
-
+import {Camera} from 'ionic-native';
     // PeerJS object
     var peer = new Peer({ key: 'utstltczdtl6jemi'});
 
@@ -49,6 +49,7 @@
       // Get audio/video stream
       navigator.getUserMedia({audio: true, video: true}, function(stream){
         // Set your video displays
+
         $('#my-video').prop('src', URL.createObjectURL(stream));
 	$('#my-video').prop('width', 320);
 	$('#my-video').prop('height', 240);
