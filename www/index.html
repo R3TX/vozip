@@ -38,63 +38,59 @@
     <!--videollamada-->
     <script src="js/video.js"></script>
   </head>
-  <body ng-app="starter">
+  <body ng-app="starter">  
+      <ion-pane>
 
-    <ion-pane>
-      <ion-header-bar class="bar-stable">
-        <h1 class="title">Video Llamada</h1>
-      </ion-header-bar>
-      <ion-content>
+        <!--Barra de arriba-->
+              <ion-header-bar class="bar-stable">
+                <h1 class="title">Video Llamada</h1>
+              </ion-header-bar>
 
+              <!--contenido-->
+              <ion-content class="contenedor">
+                
+                <div class="pure-g">
+                  <ion-card>
+                    <video id="their-video"  autoplay></video>
+                    <video id="my-video" muted="true" autoplay></video>
+                    <!--Contenido de toda la video llamada-->
+                    <ion-card-content>
+                      <!-- donde hace llamdas a otros -->
+                      <div id="step2 posicion">
+                        <p>Tu direccion: <span id="my-id">...</span></p>
+                        <div class="pure-form">
+                          <input type="text" placeholder="Llamar usuario por id..." id="callto-id">
+                          <a href="#" class="pure-button pure-button-success" id="make-call">
+                          <img src="img/llamar.png" class="circulo" >
+                          </a>
+                        </div>
+                      </div>
+                       <!-- llamada en progreso -->
+                        <div id="step3">
+                          <p>Currently in call with <span id="their-id">...</span></p>
+                          <p><a href="#" class="pure-button pure-button-error" id="end-call">
+                               <img src="img/colgar.png" class="circulo">
+                          </a></p>
+                        </div>
+                      </div>
+                    </ion-card-content>
+                  </ion-card>
 
+                   
 
-        <div class="pure-g">
+                  <!-- Steps -->
+                  <div class="pure-u-1-3">
+                    <!-- Get local audio/video stream -->
+                    <div id="step1">
+                      <div id="step1-error">
+                        <a href="#" class="pure-button pure-button-error" id="step1-retry">Try again</a>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+            </ion-content>
+    
 
-      <!-- Video area -->
-      <div class="pure-u-2-3" id="video-container">
-        <video id="their-video" autoplay></video>
-        <video id="my-video" muted="true" autoplay></video>
-      </div>
-
-      <!-- Steps -->
-      <div class="pure-u-1-3">
-        <h2>PeerJS Video Chat</h2>
-
-        <!-- Get local audio/video stream -->
-        <div id="step1">
-          <p>Please click `allow` on the top of the screen so we can access your webcam and microphone for calls.</p>
-          <div id="step1-error">
-            <p>Failed to access the webcam and microphone. Make sure to run this demo on an http server and click allow when asked for permission by the browser.</p>
-            <a href="#" class="pure-button pure-button-error" id="step1-retry">Try again</a>
-          </div>
-        </div>
-
-        <!-- Make calls to others -->
-        <div id="step2">
-          <p>Your id: <span id="my-id">...</span></p>
-          <p>Share this id with others so they can call you.</p>
-          <h3>Make a call</h3>
-          <div class="pure-form">
-            <input type="text" placeholder="Call user id..." id="callto-id">
-            <a href="#" class="pure-button pure-button-success" id="make-call">Call</a>
-          </div>
-        </div>
-
-        <!-- Call in progress -->
-        <div id="step3">
-          <p>Currently in call with <span id="their-id">...</span></p>
-          <p><a href="#" class="pure-button pure-button-error" id="end-call">End call</a></p>
-        </div>
-      </div>
-  </div>
-
-
-
-
-
-
-
-      </ion-content>
-    </ion-pane>
+    </ion-pane> 
   </body>
 </html>
