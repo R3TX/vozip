@@ -2,8 +2,8 @@
     navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
 
     // PeerJS object
-var peer = new Peer();
-    //var peer = new Peer({ key: 'lwjd5qra8257b9', debug: 3});
+//var peer = new Peer();
+    var peer = new Peer({ key: 'utstltczdtl6jemi'});
 	/*var peer = new Peer({
   config: {'iceServers': [
     { url: 'stun:stun.l.google.com:19302' },
