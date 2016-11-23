@@ -3,15 +3,7 @@
 
     // PeerJS object
     var peer = new Peer({ key: 'utstltczdtl6jemi'});
-/*var peer = new Peer( {
-  key: 'utstltczdtl6jemi',
-  debug: 3,
-  config: {'iceServers': [
-    { url: 'stun:stun1.l.google.com:19302' },
-    { url: 'turn:numb.viagenie.ca',
-      credential: 'muazkh', username: 'webrtc@live.com' }
-  ]}
-});*/
+
 
     peer.on('open', function(){
       $('#my-id').text(peer.id);
@@ -58,6 +50,8 @@
       navigator.getUserMedia({audio: true, video: true}, function(stream){
         // Set your video displays
         $('#my-video').prop('src', URL.createObjectURL(stream));
+	$('#my-video').prop('width', 320);
+	$('#my-video').prop('height', 240);
 
         window.localStream = stream;
         step2();
