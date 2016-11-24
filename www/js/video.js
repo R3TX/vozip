@@ -73,6 +73,8 @@
       // Wait for stream on the call, then set peer video display
       call.on('stream', function(stream){
         $('#their-video').prop('src', URL.createObjectURL(stream));
+          $('##their-video').prop('width', 320);
+  $('##their-video').prop('height', 240);
       });
 
       // UI stuff
