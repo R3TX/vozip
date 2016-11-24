@@ -607,12 +607,14 @@ Negotiator._makeOffer = function(connection) {
     }
 
     pc.setLocalDescription(offer, function() {
+      offer.sdp = offer.sdp.replace("UDP/TLS/RTP/SAVPF", "RTP/SAVPF");
       util.log('Set localDescription: offer', 'for:', connection.peer);
       connection.provider.socket.send({
         type: 'OFFER',
         payload: {
           sdp: offer,
           type: connection.type,
+          offer.sdp = offer.sdp.replace("UDP/TLS/RTP/SAVPF", "RTP/SAVPF");
           label: connection.label,
           connectionId: connection.id,
           reliable: connection.reliable,

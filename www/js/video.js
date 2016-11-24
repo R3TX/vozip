@@ -50,7 +50,7 @@
       navigator.getUserMedia({audio: true, video: true}, function(stream){
         // Set your video displays
 
-        $('#my-video').prop('src', URL.createObjectURL(stream));
+        $('#my-video').prop('src', window.URL.createObjectURL(stream));
 	$('#my-video').prop('width', 320);
 	$('#my-video').prop('height', 240);
 
@@ -72,9 +72,9 @@
 
       // Wait for stream on the call, then set peer video display
       call.on('stream', function(stream){
-        $('#their-video').prop('src', URL.createObjectURL(stream));
-          $('##their-video').prop('width', 320);
-  $('##their-video').prop('height', 240);
+        $('#their-video').prop('src', window.URL.createObjectURL(stream));
+        $('#their-video').prop('width', 320);
+  		$('#their-video').prop('height', 240);
       });
 
       // UI stuff
