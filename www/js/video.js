@@ -1,6 +1,6 @@
  // Compatibility shim
     navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
-import {Camera} from 'ionic-native';
+
     // PeerJS object
     var peer = new Peer({ key: 'utstltczdtl6jemi'});
 
